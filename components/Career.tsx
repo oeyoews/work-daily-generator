@@ -8,10 +8,16 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export default function Career({ career, setCareer }) {
+export default function Career({
+  career,
+  setCareer,
+}: {
+  career: string;
+  setCareer: Function;
+}) {
   const items = ['前端开发', '后端开发', '测试工程师'];
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setCareer(event);
   };
 

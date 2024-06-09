@@ -46,10 +46,6 @@ const Home = () => {
     setDate(new Date().toLocaleString().split(' ')[0]);
   }, []);
 
-  const handleChangeReadOnly = () => {
-    setReadOnly(!readOnly);
-  };
-
   const [key, setKey] = useState(0);
 
   const forceUpdate = () => {
@@ -59,26 +55,27 @@ const Home = () => {
     setItems([]);
   };
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<any>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   const save = () => {
-    if (!event.target.value) {
+    if (inputRef.current!.value === '') {
       notify.warning('请输入内容');
       return;
     }
-    setItems([...items, inputRef.current.value]);
-    inputRef.current.value = '';
+    setItems([...items, inputRef.current!.value]);
+    inputRef.current!.value = '';
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     if (event.key === 'Enter') {
       save();
     }
   };
 
-  const deleteItem = (index) => {
+  const deleteItem = (index: number) => {
+    // @ts-ignore
     setItems(items.filter((_, i) => i !== index));
   };
 
@@ -91,7 +88,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current!.focus();
   }, []);
 
   useEffect(() => {
@@ -153,7 +150,7 @@ ${itemsList(items)}【无法克服的问题】
           </div>
 
           <ol>
-            {items.map((item, index) => (
+            {items.map((item: [], index: number) => (
               <li
                 key={index}
                 className="group font-semibold">

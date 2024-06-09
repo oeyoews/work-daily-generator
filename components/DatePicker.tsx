@@ -14,7 +14,13 @@ import {
 } from '@/components/ui/popover';
 import { useEffect } from 'react';
 
-export function DatePicker({ date, setDate }) {
+export function DatePicker({
+  date,
+  setDate,
+}: {
+  date: Date | undefined;
+  setDate: any;
+}) {
   useEffect(() => {
     setDate(new Date().toLocaleString().split(' ')[0]);
   }, []);
