@@ -33,7 +33,7 @@ const Home = () => {
     }
     if (!items.length) {
       notify.error('请填写完成事项');
-      inputRef.current.focus();
+      inputRef.current?.focus();
       return;
     }
     navigator.clipboard.writeText(text);
