@@ -28,7 +28,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <main className="prose dark:prose-invert max-w-none w-2/3 mx-auto">
+          <main className="prose dark:prose-invert max-w-none w-[80%] md:w-2/3 mx-auto">
             {children}
           </main>
           <Toaster
