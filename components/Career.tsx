@@ -36,7 +36,7 @@ export default function Career({
 
   const handleChange = (event: any) => {
     setCareer(event);
-    notify.info('岗位已切换为' + items.find((item) => item === event)?.label);
+    notify.info('岗位已切换为' + items.find((item) => item.label === event)?.label);
   };
 
   return (
