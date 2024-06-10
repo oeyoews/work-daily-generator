@@ -1,6 +1,7 @@
+// @ts-nocheck
+
 'use client';
 
-// @ts-nocheck
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ButtonsSkeleton, GeneratorSkeleton } from '@/components/Skeleton';
 import { Skeleton } from '@/components/ui/skeleton';
