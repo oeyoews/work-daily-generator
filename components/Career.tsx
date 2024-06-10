@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { Toaster, toast as notify } from 'sonner';
 
 export default function Career({
   career,
@@ -19,6 +20,7 @@ export default function Career({
 
   const handleChange = (event: any) => {
     setCareer(event);
+    notify.info('岗位已切换为' + items.find((item) => item === event));
   };
 
   return (

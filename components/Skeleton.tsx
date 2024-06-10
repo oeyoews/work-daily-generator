@@ -22,3 +22,18 @@ export function GeneratorSkeleton() {
     </div>
   );
 }
+
+export const ButtonsSkeleton = () => {
+  return (
+    <div className="gap-3 justify-end flex">
+      {[...Array(3)].map((_, index) => {
+        return (
+          <Skeleton
+            className="w-12 h-9"
+            key={index}
+          />
+        );
+      })}
+    </div>
+  );
+};
