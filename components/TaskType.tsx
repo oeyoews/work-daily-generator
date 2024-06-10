@@ -9,6 +9,9 @@ import {
 } from '@/components/ui/select';
 import { Toaster, toast as notify } from 'sonner';
 
+import { MdOutlineDone } from 'react-icons/md';
+import { LuCalendarClock } from 'react-icons/lu';
+
 export default function TodayType({
   type,
   setType,
@@ -20,10 +23,12 @@ export default function TodayType({
     {
       label: '今日完成',
       value: 'done',
+      icon: <MdOutlineDone className="inline text-gray-500 mb-0.5" />,
     },
     {
       label: '明日计划',
       value: 'plan',
+      icon: <LuCalendarClock className="inline text-gray-500 mb-0.5" />,
     },
   ];
 
@@ -45,12 +50,12 @@ export default function TodayType({
         <SelectContent defaultValue="今日完成">
           <SelectGroup>
             {/* <SelectLabel></SelectLabel> */}
-            {items.map(({ label, value }: any, index) => (
+            {items.map(({ label, value, icon }: any, index) => (
               <SelectItem
                 className="cursor-pointer"
                 key={index}
                 value={value}>
-                {label}
+                {icon} {label}
               </SelectItem>
             ))}
           </SelectGroup>

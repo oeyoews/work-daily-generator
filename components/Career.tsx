@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Toaster, toast as notify } from 'sonner';
+import { RiTestTubeLine, RiJavaFill, RiJavascriptFill } from 'react-icons/ri';
 
 export default function Career({
   career,
@@ -16,11 +17,24 @@ export default function Career({
   career: string;
   setCareer: Function;
 }) {
-  const items = ['前端开发', '后端开发', '测试工程师'];
+  const items = [
+    {
+      label: '前端开发',
+      icon: <RiJavascriptFill className="inline text-gray-500 size-5 mb-0.5" />,
+    },
+    {
+      label: '后端开发',
+      icon: <RiJavaFill className="inline text-gray-500 mb-0.5" />,
+    },
+    {
+      label: '测试工程师',
+      icon: <RiTestTubeLine className="inline text-gray-500 mb-0.5" />,
+    },
+  ];
 
   const handleChange = (event: any) => {
     setCareer(event);
-    notify.info('岗位已切换为' + items.find((item) => item === event));
+    notify.info('岗位已切换为' + items.find((item) => item === event)?.label);
   };
 
   return (
@@ -35,12 +49,12 @@ export default function Career({
         <SelectContent defaultValue="前端开发">
           <SelectGroup>
             <SelectLabel>岗位</SelectLabel>
-            {items.map((item, index) => (
+            {items.map(({ label, icon }: any, index) => (
               <SelectItem
                 className="cursor-pointer"
                 key={index}
-                value={item}>
-                {item}
+                value={label}>
+                {icon} {label}
               </SelectItem>
             ))}
           </SelectGroup>

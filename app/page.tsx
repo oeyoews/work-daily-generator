@@ -170,6 +170,7 @@ ${dayList(todayItems)}
                 <Input
                   onChange={handleInputChange}
                   onKeyDown={handleInputChange}
+                  className="placeholder:text-gray-400"
                   ref={inputRef}
                   placeholder="请输入内容"
                 />
