@@ -84,7 +84,7 @@ const Home = () => {
     setItems(items.filter((_, i) => i !== index));
   };
 
-  const itemsList = (items: []) => {
+  const todayList = (items: []) => {
     let text = '';
     items.forEach((item, index) => {
       text += `\t${index + 1}. ${item}\n`;
@@ -100,7 +100,9 @@ const Home = () => {
     setText(`【时间】: ${date}
 【岗位】: ${career}
 【今日完成】:
-${itemsList(items)}【无法克服的问题】
+${todayList(items)}
+【明日计划】:
+【无法克服的问题】
 \t无
 【所需支持】
 \t无`);
