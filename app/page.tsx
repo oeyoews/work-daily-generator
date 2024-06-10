@@ -99,7 +99,7 @@ const Home = () => {
   useEffect(() => {
     setText(`【时间】: ${date}
 【岗位】: ${career}
-【本周完成】:
+【今日完成】:
 ${itemsList(items)}【无法克服的问题】
 \t无
 【所需支持】
